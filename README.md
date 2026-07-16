@@ -22,27 +22,34 @@ Get-FileHash .\VS2B-Portable-0.2.0-beta-x64.exe -Algorithm SHA256
 
 ## Before You Start
 
-- VS2B is designed for Windows and devices on the same trusted local network.
-- Do not expose the VS2B screen webpage directly to the public internet.
-- Start in **Test Mode**. It logs controls without sending keys to another program.
-- **Live Mode** can send keyboard and mouse input to Windows. Choose the correct target application before using it.
+VS2B is designed to keep testing local and deliberate:
+
+- **VS2B always starts in Test Mode.** In Test Mode, controls are recorded in the Command Log but no keyboard or mouse input is sent to another program.
+- **Live Mode is optional and must be turned on manually.** When enabled, it can send your configured keyboard and mouse input to Windows. When a target application is set for the profile, VS2B checks that it is in the foreground before sending input.
+- **The screen webpage stays on your local network.** VS2B serves the page directly from your PC to devices on the same network. It does not publish the page online, create an internet tunnel, or provide a hosted service.
+- **Phone and tablet access uses pairing.** A device must enter the access code before it can load your profiles and pages.
+- **Diagnostic logging is automatic.** VS2B keeps a small rotating log in its application-data folder. It keeps the current log and one previous log instead of growing forever.
+
+A few good habits while testing:
+
+- Build and try controls in Test Mode before switching to Live Mode.
+- Select the correct target application before enabling Live Mode.
 - Use **Release All Keys** immediately if a simulated key ever seems stuck.
-- Export or copy any important profiles before trying a new beta build.
-- VS2B automatically keeps a small rotating diagnostic log in its application-data folder. It keeps the current log and one previous log instead of growing forever.
+- Export or copy important profiles before trying a newer beta build.
 
 ## Quick Start
 
 1. Download and run the portable `.exe`.
 2. In the PC app, select an existing profile or create a new one.
-3. Set the profile's **Target Application** to the game or program that should receive Live Mode input.
+3. If you plan to use Live Mode, set the profile's **Target Application** to the game or program that should receive input.
 4. Use **Pages** to create or select a page.
 5. Add controls in the page builder, then drag and resize them to arrange your layout.
 6. Select each control to edit its label, appearance, shortcut, macro, or control settings.
 7. Click **Save Profiles** when the app shows unsaved changes.
-8. In the screen webpage section, create an access code and click **Start Screen**.
+8. In the screen webpage section, create an access code if one is not already set, then click **Start Screen**.
 9. On a phone or tablet connected to the same network, open one of the LAN addresses shown by VS2B.
-10. Enter the access code to pair the device, then test the layout in **Test Mode**.
-11. When the controls behave correctly, switch to **Live Mode**, bring the chosen target application to the foreground, and test carefully.
+10. Enter the access code to pair the device. VS2B will still be in **Test Mode**, so you can safely try the layout and watch the Command Log.
+11. When the controls behave correctly, you can manually switch to **Live Mode**. Bring the chosen target application to the foreground and test carefully.
 
 The **Info** button in the PC app also contains a short guide to profiles, pages, controls, shortcuts, macros, colors, pairing, and input safety.
 
@@ -85,14 +92,15 @@ Please pay special attention to:
 - Saving, unsaved-change warnings, changing editor pages, and restarting the app.
 - Push buttons, holds, toggles, macros, mouse wheels, sliders, energy matrices, and switches.
 - Pairing, forgetting a device, reconnecting after sleep, and refreshing the screen webpage.
-- Test Mode versus Live Mode.
-- Target-application blocking when the wrong program has focus.
-- Key release when switching away from a game or pressing **Release All Keys**.
+- In Test Mode, confirm that control presses appear in the Command Log without typing into another program.
+- In Live Mode, confirm that input works only while the selected target application is in the foreground.
+- Confirm that input is blocked when the wrong program has focus.
+- Confirm that keys are released when switching away from a game or pressing **Release All Keys**.
 - Older or less common mobile browsers, if you have one available.
 
 ## Reporting A Problem
 
-Open a GitHub issue and include as much of the following as you can:
+[Open a VS2B-Beta issue](https://github.com/Nes-Apps/VS2B-Beta/issues/new) and include as much of the following as you can:
 
 - VS2B version.
 - Windows version.
@@ -103,7 +111,7 @@ Open a GitHub issue and include as much of the following as you can:
 - What you expected and what actually happened.
 - A screenshot or short recording, if it helps explain the layout or behavior.
 - Relevant messages from the VS2B command log.
-- The exported diagnostic log, especially if the problem happened before the app was restarted.
+- The exported diagnostic log, preferably exported soon after the problem happens.
 
 Use **Export Log** in the PC app's Command Log panel to save a copy that can be attached to the issue. The automatic log records the app version, warnings, errors, connection activity, input events, device/session identifiers, and command context. It does not intentionally record the pairing access code, but it may contain target-app names, local file paths, shortcuts, local network information, or profile/control identifiers.
 
@@ -114,3 +122,9 @@ Please open the exported log in a text editor and remove access codes, personal 
 VS2B is local-first. It does not inspect game memory, modify game files, bypass anti-cheat systems, or provide a hosted remote service. It sends normal configured input from the PC app when Live Mode and its safety checks allow it.
 
 This is a learning project shared in the hope that it is useful and fun. Use beta builds at your own risk, keep backups of layouts you care about, and be patient with the human building it.
+
+Thanks for giving this little side project a try and for helping make it better.
+
+Cheers,
+
+Nes
