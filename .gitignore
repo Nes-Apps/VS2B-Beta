@@ -1,0 +1,5 @@
+# Keep this repository binary-distribution only.
+node_modules/
+dist/
+release/
+*.log

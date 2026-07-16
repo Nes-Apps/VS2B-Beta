@@ -1,0 +1,1 @@
+2685c39c42f77dfae85c1af92465c133d36beccc7ab638f0d6a8b535a4532fdb  VS2B-Portable-0.2.0-beta-x64.exe
