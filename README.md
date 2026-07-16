@@ -4,7 +4,7 @@ VS2B (Virtual SIM Button Box) is a Windows app for building a touchscreen contro
 
 This is an open beta of an amateur side project. I am building it in my spare time because I wanted a flexible virtual button box for simulator-style games. Expect rough edges, unfinished ideas, and the occasional bug. Friendly, specific feedback is very welcome, but please do not expect commercial-product support or guaranteed fixes.
 
-This repository contains downloadable beta builds only. The source code lives in the [VS2B source repository](https://github.com/Nes-Apps/VS2B).
+This repository contains downloadable beta builds only. The source code is maintained in a separate private repository.
 
 ## Download
 
