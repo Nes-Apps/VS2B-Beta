@@ -8,16 +8,18 @@ This repository contains downloadable beta builds only. The source code is maint
 
 ## Download
 
-Download the current Windows x64 portable build from GitHub Releases:
+Download the newest Windows x64 portable build from GitHub Releases:
 
-- [VS2B-Portable-0.2.0-beta-x64.exe](https://github.com/Nes-Apps/VS2B-Beta/releases/download/v0.2.0-beta/VS2B-Portable-0.2.0-beta-x64.exe)
+- [Open the VS2B-Beta Releases page](https://github.com/Nes-Apps/VS2B-Beta/releases)
+
+Open the newest beta release and download the file named `VS2B-Portable-<version>-x64.exe` from its Assets section.
 
 No installer is required. Windows may show a SmartScreen warning because this hobby-project build is not code-signed. Check the SHA-256 value in `SHA256SUMS.txt` before running the file if you want to verify your download.
 
 PowerShell verification example:
 
 ```powershell
-Get-FileHash .\VS2B-Portable-0.2.0-beta-x64.exe -Algorithm SHA256
+Get-FileHash .\VS2B-Portable-*.exe -Algorithm SHA256
 ```
 
 ## Before You Start
